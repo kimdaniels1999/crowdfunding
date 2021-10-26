@@ -5,17 +5,19 @@ import Nav from "./components/Nav/Nav";
 import HomePage from "./pages/HomePage";
 import Home from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <Router>
     <div>
-    <Nav/>
-        
-        
+    <Nav />
     <Switch>
         <Route path="/project/:id">
         <ProjectPage />
+        </Route>
+        <Route path="/login">
+        <LoginPage />
         </Route>
         <Route path="/">
         <HomePage />
