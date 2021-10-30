@@ -10,7 +10,7 @@ const CategoriesPage = () => {
         height: "100vh",
       }}
     >
-      <h1>Fundraising Categories</h1>
+      <h1>Choose a Fundraising Category</h1>
     </div>
   );
 };
