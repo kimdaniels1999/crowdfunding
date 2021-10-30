@@ -1,40 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route }from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav/Nav";
-import HomePage from "./pages/HomePage";
+import Navbar from './components/Nav/Nav';
+// import HomePage from "./pages/HomePage";
 import Home from "./pages/HomePage";
-import ProjectPage from "./pages/ProjectPage";
-import LoginPage from './pages/LoginPage';
-import Contact from './pages/ContactPage';
-import About from './pages/AboutPage'
-import CreateProjectForm from "./components/CreateProjectForm/CreateProjectForm";
+// import ProjectPage from "./pages/ProjectPage";
+import SignInPage from './pages/SignInPage';
+import CategoriesPage from './pages/CategoriesPage';
+import HowItWorksPage from './pages/HowItWorksPage'
+import StartAProjectPage from "./pages/StartAProjectPage";
+
 
 
 function App() {
   return (
     <Router>
     <div>
-    <Nav />
+    <Navbar />
     <Switch>
-        <Route exact path="/project/:id">
-        <ProjectPage />
-        </Route>
-        <Route exact path="/about/">
-        <ProjectPage />
-        </Route>
-        <Route exact path="/contact/">
-        <ProjectPage />
-        </Route>
-        <Route exact path="/login">
-        <LoginPage />
-        </Route>
-        <Route exact path="/CreateProjectForm">
-        <CreateProjectForm />
-        </Route>
-        <Route path="/">
-        <HomePage />
-        </Route>
+        <Route path='/HowItWorks' component={HowItWorksPage} />
+        <Route path='/Categories' component={CategoriesPage} />
+        <Route path='/SignIn' component={SignInPage} />
+        <Route path='/StartAProject' component={StartAProjectPage} />
+        <Route path='/' exact component={Home} />
     </Switch>
     </div>
     </Router>

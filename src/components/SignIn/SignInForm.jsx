@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function LoginForm() {
+function SignInForm() {
   const history = useHistory();
   const [credentials, setCredentials] = useState({
     username: "",
@@ -43,7 +43,7 @@ function LoginForm() {
   return (
     <form>
       <div>
-        <label> htmlFor="username">Username:</label>
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
           id="username"
@@ -62,11 +62,11 @@ function LoginForm() {
       </div>
       <div>
         <button type="submit" onClick={handleSubmit}>
-          Login
+          SignIn
         </button>
       </div>
     </form>
   );
 }
 
-export default LoginForm;
+export default SignInForm;

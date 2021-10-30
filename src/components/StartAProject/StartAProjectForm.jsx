@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const CreateProjectForm = () => {
+const StartAProjectForm = () => {
   const history = useHistory();
   const [projectInfo, setProjectInfo] = useState({
     projectTitle: "",
@@ -94,4 +94,4 @@ const CreateProjectForm = () => {
   );
 };
 
-export default CreateProjectForm;
+export default StartAProjectForm;

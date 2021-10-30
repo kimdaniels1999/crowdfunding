@@ -1,16 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink,
+} from "./NavbarElements";
 
-function Nav() {
+const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/login">LoginPage</Link>
-      <Link to="/CreateProjectForm">Create Project Page</Link>
-    </nav>
-  );
-}
+    <>
+      <Nav>
+        <Bars />
 
-export default Nav;
+        <NavMenu>
+          <NavLink to="/" activeStyle>
+            Home
+          </NavLink>
+          <NavLink to="/Categories" activeStyle>
+            Categories
+          </NavLink>
+          <NavLink to="/HowItWorks" activeStyle>
+            How It Works
+          </NavLink>
+          <NavLink to="/SignIn" activeStyle>
+            Sign In
+          </NavLink>
+        </NavMenu>
+        <NavBtn>
+          <NavBtnLink to="/StartAProject"> Start A Project </NavBtnLink>
+        </NavBtn>
+      </Nav>
+    </>
+  );
+};
+
+export default Navbar;
