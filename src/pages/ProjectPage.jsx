@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { id } = useParams();
+  console.log("my id", id);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)

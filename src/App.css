@@ -6,6 +6,24 @@
 }
 
 html {
-  background-color: #fcfaf9;
+  background-color: #64dfdf;
   font-family: monospace;
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #6930c3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.category-images {
+  padding: 50px;
+  margin: 1.5rem;
+  justify-content: center;
+  height: fit-content;
+  width: auto;
 }

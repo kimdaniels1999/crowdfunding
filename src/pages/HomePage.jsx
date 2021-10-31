@@ -23,7 +23,7 @@ function HomePage() {
         display: "flex",
         justifyContent: "Right",
         alignItems: "Right",
-        height: "100vh",
+        height: "50vh",
       }}
     >
       {projectList.map((projectData, key) => {
