@@ -14,7 +14,7 @@ function ProjectPage() {
       .then((data) => {
         setProjectData(data);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div>

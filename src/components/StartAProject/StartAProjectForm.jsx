@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./Project.css";
 
 const StartAProjectForm = () => {
   const history = useHistory();
