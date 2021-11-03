@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route }from "react-router-dom";
 import "./App.css";
-import Navbar from './components/Nav/Nav';
+import Nav from './components/Nav/Nav';
 import Footer from "./components/Footer/Footer"
 import Home from "./pages/HomePage";
 import SignInPage from './pages/SignInPage';
@@ -11,11 +11,11 @@ import StartAProjectPage from "./pages/StartAProjectPage";
 import ProjectPage from "./pages/ProjectPage";
 
 
-function App() {
+const App = () => {
   return (
     <Router>
     <div>
-    <Navbar />
+    <Nav />
     <Switch>
         <Route path='/howitworks' component={HowItWorksPage} />
         <Route path='/categories' component={CategoriesPage} />
@@ -29,6 +29,6 @@ function App() {
     </Router>
 
   );
-}
+};
 
 export default App;

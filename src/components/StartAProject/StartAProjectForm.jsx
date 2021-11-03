@@ -10,26 +10,39 @@ const StartAProjectForm = () => {
     projectGoal: "",
     projectImage: "",
     projectisOpen: "",
+    date_created: new Date(),
   });
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setProjectInfo((prevProject) => ({
-      ...prevProject,
-      [id]: value,
-    }));
+    setProjectInfo((prevProject) => {
+      return {
+        ...prevProject,
+        [id]: value,
+      };
+    });
   };
 
   const postData = async () => {
-    // console.log("Im posting a project to your API");
+    console.log("Im posting a project to your API");
     const token = window.localStorage.getItem("token");
+    console.log("What is token:", token);
+
     const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
       method: "post",
       headers: {
+        Authorization: `Token ${token}`,
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(projectInfo),
+      body: JSON.stringify({
+        title: "New Project",
+        description: "Lets get creative",
+        goal: 500,
+        image:
+          "https://images.pexels.com/photos/9429403/pexels-photo-9429403.jpeg?cs=srgb&dl=pexels-monstera-9429403.jpg&fm=jpg",
+        is_open: true,
+        date_created: new Date(),
+      }),
     });
     return response.json();
   };
@@ -44,7 +57,8 @@ const StartAProjectForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="projectName">Project Title:</label>
+        <h1> Let's start a project </h1>
+        <label htmlFor="projectName">Title:</label>
         <input
           type="text"
           id="projectName"
@@ -53,7 +67,7 @@ const StartAProjectForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="projectDescription">Project Description:</label>
+        <label htmlFor="projectDescription">Description:</label>
         <input
           type="text"
           id="projectDescription"
@@ -62,7 +76,7 @@ const StartAProjectForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="projectGoal">Project Goal:</label>
+        <label htmlFor="projectGoal">Goal:</label>
         <input
           type="text"
           id="projectGoal"
@@ -71,7 +85,7 @@ const StartAProjectForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="projectImage">Project Image:</label>
+        <label htmlFor="projectImage">Image:</label>
         <input
           type="text"
           id="projectImage"
@@ -80,7 +94,7 @@ const StartAProjectForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="projectIsOpen">Project Is Open:</label>
+        <label htmlFor="projectIsOpen">Open for Pledges:</label>
         <input
           type="text"
           id="projectIsOpen"
@@ -88,7 +102,7 @@ const StartAProjectForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div clasName="startbutton">
         <button type="submit">Submit New Project</button>
       </div>
     </form>

@@ -35,13 +35,14 @@ function SignInForm() {
     if (credentials.username && credentials.password) {
       postData().then((response) => {
         window.localStorage.setItem("token", response.token);
+        // window.location = `${window.location.origin}`/`
         history.push("/");
       });
     }
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
         <input

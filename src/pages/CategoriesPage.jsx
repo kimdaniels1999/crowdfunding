@@ -1,4 +1,3 @@
-import { flexbox, grid, width } from "@mui/system";
 import React from "react";
 import "../App.css";
 import domesticbliss from "./images/domesticbliss.jpg";
