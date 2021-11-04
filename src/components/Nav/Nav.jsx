@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -17,10 +18,10 @@ const Nav = () => {
       {isLoggedIn ? (
         <button onClick={logout}>Log Out</button>
       ) : (
-        <div>
+        <div className="signin">
+          <Link to="/SignIn">Sign In</Link>
           <Link to="/Categories">Categories</Link>
           <Link to="/HowItWorks">How It Works</Link>
-          <Link to="/SignIn">Sign In</Link>
           <Link to="/StartAProject"> Start A Project </Link>
         </div>
       )}

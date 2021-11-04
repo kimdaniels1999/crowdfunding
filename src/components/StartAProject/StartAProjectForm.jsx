@@ -55,57 +55,61 @@ const StartAProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <h1> Let's start a project </h1>
-        <label htmlFor="projectName">Title:</label>
-        <input
-          type="text"
-          id="projectName"
-          placeholder="Enter project name"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="projectDescription">Description:</label>
-        <input
-          type="text"
-          id="projectDescription"
-          placeholder="Description"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="projectGoal">Goal:</label>
-        <input
-          type="text"
-          id="projectGoal"
-          placeholder="Goal"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="projectImage">Image:</label>
-        <input
-          type="text"
-          id="projectImage"
-          placeholder="Image"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="projectIsOpen">Open for Pledges:</label>
-        <input
-          type="text"
-          id="projectIsOpen"
-          placeholder="IsOpen"
-          onChange={handleChange}
-        />
-      </div>
-      <div clasName="startbutton">
-        <button type="submit">Submit New Project</button>
-      </div>
-    </form>
+    <div className="project-box">
+      <h1 className="project-label"> Let's start a Project </h1>
+      <form className="project-form" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="projectName">Title:</label>
+          <input
+            type="text"
+            id="projectName"
+            placeholder="Enter your Project name"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="projectDescription">Description:</label>
+          <input
+            type="text"
+            id="projectDescription"
+            placeholder="Tell us about your Project"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="projectGoal">Goal:</label>
+          <input
+            type="text"
+            id="projectGoal"
+            placeholder="$$$ Goal"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="projectImage">Image:</label>
+          <input
+            type="text"
+            id="projectImage"
+            placeholder="Upload Image"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="projectIsOpen">Open for Pledges:</label>
+          <input
+            type="text"
+            id="projectIsOpen"
+            placeholder="Yes"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button type="submit" className="startButton">
+            Submit New Project
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { allProjects } from "../data";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
-function HomePage() {
+const HomePage = () => {
   const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
@@ -21,16 +21,18 @@ function HomePage() {
       id="project-list"
       style={{
         display: "flex",
-        justifyContent: "Right",
-        alignItems: "Right",
+        // justifyContent: "Right",
+        flexDirection: "columnn",
+        // alignItems: "Right",
         height: "50vh",
       }}
     >
+      <h1>"Check it out - Projects Galore!"</h1>
       {projectList.map((projectData, key) => {
         return <ProjectCard key={key} projectData={projectData} />;
       })}
     </div>
   );
-}
+};
 
 export default HomePage;

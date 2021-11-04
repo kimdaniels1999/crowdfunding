@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./SignIn.css";
 
 function SignInForm() {
   const history = useHistory();
@@ -42,31 +43,36 @@ function SignInForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Enter username"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="password"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <button type="submit" onClick={handleSubmit}>
-          SignIn
-        </button>
-      </div>
-    </form>
+    <div className="sign-box">
+      <h1 className="sign-label">Log In Time</h1>
+      <form className="sign-form" onSubmit={handleSubmit}>
+        <div className="user">
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            className="form-input"
+            id="username"
+            placeholder="Enter username"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="password">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            className="form-input"
+            id="password"
+            placeholder="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button type="submit" className="submitBtn" onClick={handleSubmit}>
+            Sign In
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
