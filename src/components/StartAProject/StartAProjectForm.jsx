@@ -49,13 +49,12 @@ const StartAProjectForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (window.localStorage.getItem("token")) {
-      postData().then((response) => {}); //passing the whole function as an argument to another function
-    }
+    // if (window.localStorage.getItem("token")) {
+    postData().then((response) => {}); //passing the whole function as an argument to another function
   };
 
   return (
-    <div className="project-box">
+    <div className="project-box" style={{}}>
       <h1 className="project-label"> Let's start a Project </h1>
       <form className="project-form" onSubmit={handleSubmit}>
         <div>

@@ -17,7 +17,7 @@
   text-align: center;
   margin: auto;
   width: 35%;
-  padding: 0.5rem;
+  padding: 1.5rem;
 }
 
 .sign-form {
@@ -25,7 +25,7 @@
   display: block;
   margin: auto;
   padding: 1rem;
-  background-color: #ffdefa;
+  background-color: #c6f1e7;
 }
 
 .sign-box input {

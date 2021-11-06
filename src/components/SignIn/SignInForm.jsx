@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./SignIn.css";
 
-function SignInForm() {
+const SignInForm = () => {
   const history = useHistory();
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
-      [id]: value,
-    }));
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setCredentials((prevCredentials) => {
+      return {
+        ...prevCredentials,
+        [id]: value,
+      };
+    });
   };
 
   const postData = async () => {
@@ -31,12 +33,11 @@ function SignInForm() {
     return response.json();
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (credentials.username && credentials.password) {
       postData().then((response) => {
         window.localStorage.setItem("token", response.token);
-        // window.location = `${window.location.origin}`/`
         history.push("/");
       });
     }
@@ -74,6 +75,6 @@ function SignInForm() {
       </form>
     </div>
   );
-}
+};
 
 export default SignInForm;

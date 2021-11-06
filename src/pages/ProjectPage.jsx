@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const ProjectPage = () => {
   const history = useHistory();
@@ -48,17 +47,17 @@ const ProjectPage = () => {
 
   const ReadProject = () => {
     return (
-      <div>
-        <Link to={`project/${projectData.id}`}>
-          <h1>Title:{projectData.title}</h1>
-          <h2>Description: {projectData.description}</h2>
+      <div className="read">
+        <div className="read-project">
+          <h2>Title: {projectData.title}</h2>
+          <h2>Description:{projectData.description}</h2>
           <img src={projectData.image} />
           <h2>Goal: {projectData.goal}</h2>
-          <h3>
-            Create at: {new Date(projectData.date_created).toDateString()}
-          </h3>
-          <h3>{`Is Open to pledges: ${projectData.is_open}`}</h3>
-          <h3>Pledges:</h3>
+          <h2>
+            Created at: {new Date(projectData.date_created).toDateString()}
+          </h2>
+          <h2>{`Is Open to pledges: ${projectData.is_open}`}</h2>
+          <h2>Pledges:</h2>
           <ul>
             {projectData.pledges.map((pledgeData, key) => {
               return (
@@ -68,7 +67,7 @@ const ProjectPage = () => {
               );
             })}
           </ul>
-        </Link>
+        </div>
       </div>
     );
   };
@@ -88,7 +87,7 @@ const ProjectPage = () => {
       {localStorage.getItem("token") && isEditing === false && (
         <button onClick={() => setIsEditing(true)}> Edit Project </button>
       )}
-      <div>
+      <div className="delete-project">
         {localStorage.getItem("token") && (
           <button onClick={deleteProject}> Delete Project </button>
         )}
@@ -126,7 +125,7 @@ const ProjectPage = () => {
                 />
               </div>
               <div>
-                <label htmlFor="imdage">Image</label>
+                <label htmlFor="image">Image</label>
                 <input
                   value={projectData.image}
                   type="text"

@@ -15,14 +15,14 @@ const Nav = () => {
   return (
     <nav>
       <Link to="/">Home</Link>
+      <Link to="/Categories">Categories</Link>
+      <Link to="/HowItWorks">How It Works</Link>
+      <Link to="/StartAProject"> Start A Project </Link>
       {isLoggedIn ? (
         <button onClick={logout}>Log Out</button>
       ) : (
         <div className="signin">
           <Link to="/SignIn">Sign In</Link>
-          <Link to="/Categories">Categories</Link>
-          <Link to="/HowItWorks">How It Works</Link>
-          <Link to="/StartAProject"> Start A Project </Link>
         </div>
       )}
     </nav>

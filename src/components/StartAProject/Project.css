@@ -15,16 +15,16 @@
 .project-label {
   text-align: center;
   margin: auto;
-  width: 90%;
-  padding: 0.5rem;
+  width: 80%;
+  padding: 1.5rem;
 }
 
 .project-form {
-  width: 90%;
+  width: 50%;
   display: block;
   margin: auto;
   padding: 1rem;
-  background-color: #ffdefa;
+  background-color: #c6f1e7;
 }
 
 .project-box input {
@@ -62,7 +62,7 @@
 h1 {
   font-size: 4rem;
   line-height: 1.2em;
-  color: #6ecb63;
+  color: #11cbd7;
   margin: 0.5 rem;
   font-weight: bold;
 }

@@ -1,3 +1,67 @@
+html {
+  background-color: #ffffff;
+  font-family: monospace;
+}
+
+h3 {
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin: 1.5rem;
+}
+
+.read {
+  margin: auto;
+  width: 90vh;
+  padding: 2rem;
+}
+
+.read-project {
+  width: 70%;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  background-color: #c6f1e7;
+}
+
+.read h2,
+h3 {
+  width: 80%;
+  margin: auto;
+  padding: 1.5rem;
+  /* color: #ec9cd3; */
+  /* font-family: "Shadows Into Light", cursive; */
+  font-weight: bolder;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.delete-project button {
+  float: inline-end;
+  border: 0;
+  border-radius: 5px;
+  background-color: #b1e693;
+  padding: 1rem;
+  color: #ffff;
+  margin: 1.5vw 0.9vw;
+  width: 15%;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* change the mouse corsor to finger pointer */
+  transition: 1s background ease;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.delete-project button:hover {
+  background-color: #cdf2ca;
+  color: #fff;
+  font-size: 20px;
+}
+
 #project-list {
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -5,24 +69,92 @@
   row-gap: 10px;
 }
 
-html {
-  background-color: #f9f3df;
-  font-family: monospace;
+.categories-box {
+  height: 60vh;
+  margin: 0vw;
+  padding: 5vw;
+  position: relative;
+}
+
+.category-label {
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  padding: 1.5rem;
+}
+
+.category-list {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #c6f1e7;
+}
+
+.column {
+  flex: 33%;
+  text-align: center;
+}
+
+.category-images {
+  margin: 1.5rem;
+  width: 300px;
+  height: 350px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.instructions {
+  height: 90vh;
+  margin: 0vw;
+  padding: 5vw;
+  position: relative;
+}
+
+.list {
+  display: block;
+  width: 40%;
+  padding: 1rem;
+  margin: auto;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #c6f1e7;
+}
+
+.howto {
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  padding: 1.5rem;
+}
+
+ol {
+  line-height: 1.5rem;
+  margin: 5px 5px 15px;
+  padding: 1.5rem;
+}
+
+li {
+  margin: 1rem;
+  list-style-type: decimal;
+  list-style-position: inside;
+  position: relative;
+  padding: 0px 5px 0px 30px;
+  color: #ec9cd3;
+  font-size: 2rem;
+  line-height: 2em;
+  border-radius: 5px;
+  background-color: #ffffff;
 }
 
 .footer {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #91c788;
+  background-color: #fa4659;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-.category-images {
-  padding: 10px;
-  margin: 1.5rem;
-  width: 145px;
-  height: 160px;
 }

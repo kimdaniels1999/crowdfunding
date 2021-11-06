@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { allProjects } from "../data";
+// import { allProjects } from "../data";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 const HomePage = () => {
@@ -16,21 +16,47 @@ const HomePage = () => {
       });
   }, []);
 
+  const [name, setName] = useState("");
+
+  const startaProject = async (e) => {
+    e.preventDefault();
+    const project = {
+      title: name,
+      description: "what is the project",
+      goal: 100,
+      image: "https",
+      is_open: true,
+      created_at: new Date(),
+    };
+
+    await fetch(`${process.env.REACT_APP_APR_URL}projects/`, {
+      method: "post",
+      headers: {
+        Authorization: `Token ${window.localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(project),
+    });
+  };
+
+  const token = window.localStorage.getItem("token");
+
   return (
-    <div
-      id="project-list"
-      style={{
-        display: "flex",
-        // justifyContent: "Right",
-        flexDirection: "columnn",
-        // alignItems: "Right",
-        height: "50vh",
-      }}
-    >
-      <h1>"Check it out - Projects Galore!"</h1>
-      {projectList.map((projectData, key) => {
-        return <ProjectCard key={key} projectData={projectData} />;
-      })}
+    <div>
+      {token ? (
+        <div className="login">
+          <h1> You're Logged IN!</h1>
+        </div>
+      ) : null}
+      <div id="project-list">
+        {projectList.map((projectData, key) => {
+          return (
+            <div key={key}>
+              <ProjectCard projectData={projectData} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
