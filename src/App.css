@@ -3,6 +3,13 @@ html {
   font-family: monospace;
 }
 
+.header {
+  background-image: url(./pages/images/streetscholar3.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
 h3 {
   font-size: 1.5vw;
   font-weight: bold;
@@ -11,25 +18,23 @@ h3 {
 
 .read {
   margin: auto;
-  width: 90vh;
+  /* width: 90vh; */
   padding: 2rem;
 }
 
 .read-project {
-  width: 70%;
+  width: 60%;
   display: block;
   margin: auto;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #c6f1e7;
 }
 
 .read h2,
 h3 {
   width: 80%;
-  margin: auto;
-  padding: 1.5rem;
-  /* color: #ec9cd3; */
-  /* font-family: "Shadows Into Light", cursive; */
+  margin: 1rem;
+  padding: 0.5rem;
   font-weight: bolder;
 }
 
@@ -63,10 +68,13 @@ h3 {
 }
 
 #project-list {
+  margin: 50px 50px 50px 50px;
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  column-gap: 15px;
+  row-gap: 20px;
+  border: none;
 }
 
 .categories-box {
@@ -84,11 +92,11 @@ h3 {
 }
 
 .category-list {
-  display: flex;
-  margin: auto;
-  width: 80%;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin: 20px 50px 50px 50px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  border: none;
   background-color: #c6f1e7;
 }
 
@@ -98,23 +106,23 @@ h3 {
 }
 
 .category-images {
-  margin: 1.5rem;
-  width: 300px;
-  height: 350px;
+  /* margin: 1.5rem; */
+  max-width: 80%;
+  max-height: 80%;
   border: 0;
   border-radius: 5px;
 }
 
 .instructions {
-  height: 90vh;
-  margin: 0vw;
+  height: 20vh;
+  margin: auto;
   padding: 5vw;
   position: relative;
 }
 
-.list {
+.howto-list {
   display: block;
-  width: 40%;
+  width: 50%;
   padding: 1rem;
   margin: auto;
   border: 0;
@@ -150,9 +158,10 @@ li {
 }
 
 .footer {
-  margin-top: 1rem;
+  margin-top: 4rem;
   padding: 1rem;
   background-color: #fa4659;
+  color: #ffffff;
   position: fixed;
   bottom: 0;
   left: 0;

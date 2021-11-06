@@ -55,7 +55,7 @@ const StartAProjectForm = () => {
 
   return (
     <div className="project-box" style={{}}>
-      <h1 className="project-label"> Let's start a Project </h1>
+      <h1 className="project-label">Let's Get Started</h1>
       <form className="project-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="projectName">Title:</label>

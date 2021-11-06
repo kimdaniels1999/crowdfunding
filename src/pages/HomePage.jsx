@@ -45,7 +45,7 @@ const HomePage = () => {
     <div>
       {token ? (
         <div className="login">
-          <h1> You're Logged IN!</h1>
+          <h2> Welcome You're Logged in</h2>
         </div>
       ) : null}
       <div id="project-list">

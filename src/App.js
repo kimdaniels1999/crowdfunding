@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route }from "react-router-dom";
 import "./App.css";
 
-import NavigationComponent from './components/Nav/Nav';
+import Nav from './components/Nav/Nav';
+import Header from "./components/Header/Header";
 
 import Footer from "./components/Footer/Footer"
 
@@ -16,10 +17,11 @@ import ProjectPage from "./pages/ProjectPage";
 
 const App = () => {
   return (
-    <div>
+    <div className="street-sign">
     <Router>
-      <NavigationComponent />
-
+      <Header />
+      <hr />
+      <Nav />
       <Switch>
         <Route exact path='/'>
           <Home />

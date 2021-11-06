@@ -5,7 +5,7 @@ const HowItWorksPage = () => {
   return (
     <div className="instructions">
       <h1 className="howto">Steps to Create Your Project</h1>
-      <div className="list">
+      <div className="howto-list">
         <ol>
           <li>Build an Awesome User Profile</li>
           <li>Select Start a Project</li>
