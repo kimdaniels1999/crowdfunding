@@ -5,14 +5,9 @@ const Header = () => {
     <div
       className="header"
       style={{
-        height: "230px",
+        height: "200px",
       }}
-    >
-      <h1>
-        {" "}
-        Check it out <br></br> Projects Galore!
-      </h1>
-    </div>
+    ></div>
   );
 };
 

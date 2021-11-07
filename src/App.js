@@ -17,7 +17,7 @@ import ProjectPage from "./pages/ProjectPage";
 
 const App = () => {
   return (
-    <div className="street-sign">
+    <div>
     <Router>
       <Header />
       <hr />
