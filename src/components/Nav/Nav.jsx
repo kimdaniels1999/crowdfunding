@@ -15,7 +15,7 @@ const Nav = () => {
   return (
     <nav
       style={{
-        height: "80px",
+        height: "100px",
       }}
     >
       <Link to="/">Home</Link>

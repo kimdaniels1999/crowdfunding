@@ -5,6 +5,7 @@ nav {
   justify-content: space-evenly;
   font-size: x-large;
   box-shadow: none !important;
+  align-items: center;
 }
 
 a:link {
@@ -34,15 +35,15 @@ nav button {
   border: 0;
   border-radius: 5px;
   background-color: #b1e693;
-  padding: 1rem;
+  padding: 1vw;
   color: #ffff;
-  margin: 1.5vw 0.9vw;
+  margin: 1vw 0.9vw;
   width: 15%;
   text-transform: uppercase;
   cursor: pointer;
   /* change the mouse corsor to finger pointer */
   transition: 1s background ease;
-  font-size: 20px;
+  font-size: large;
   letter-spacing: 4px;
 }
 

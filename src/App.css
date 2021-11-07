@@ -12,6 +12,8 @@ body {
   background-repeat: no-repeat, no-repeat;
   background-size: contain, cover;
   background-position: center, left;
+  background-blend-mode: hard-light;
+  /* border-radius: 85%; */
   /* background-color: #f8f7f3; */
 }
 
