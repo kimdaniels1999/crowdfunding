@@ -1,4 +1,7 @@
 Kim Daniels – 7th November 2021
+Crowdfunding app “Street Scholar” 
+A platform for projects covering subjects not taught in school and cover life lessons we should be taught before coming perfectly functional adults.
+
 Part B Submission Please submit the following: 
 
  ▢ A link to the GitHub repository containing the code for your project. 
