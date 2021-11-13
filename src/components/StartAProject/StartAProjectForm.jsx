@@ -26,7 +26,7 @@ const StartAProjectForm = () => {
   const postData = async () => {
     console.log("Im posting a project to your API");
     const token = window.localStorage.getItem("token");
-    console.log("What is token:", token);
+    console.log("What is token: ", token);
 
     const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
       method: "post",
@@ -34,15 +34,15 @@ const StartAProjectForm = () => {
         Authorization: `Token ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        title: "New Project",
-        description: "Lets get creative",
-        goal: 500,
-        image:
-          "https://images.pexels.com/photos/9429403/pexels-photo-9429403.jpeg?cs=srgb&dl=pexels-monstera-9429403.jpg&fm=jpg",
-        is_open: true,
-        date_created: new Date(),
-      }),
+      body: JSON.stringify(projectInfo),
+      // }
+      // title: "New Project",
+      // description: "Lets get creative",
+      // goal: 500,
+      // image:
+      //   "https://images.pexels.com/photos/9429403/pexels-photo-9429403.jpeg?cs=srgb&dl=pexels-monstera-9429403.jpg&fm=jpg",
+      // is_open: true,
+      // date_created: new Date(),
     });
     return response.json();
   };
