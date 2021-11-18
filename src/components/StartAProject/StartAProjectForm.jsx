@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./Project.css";
 
 const StartAProjectForm = () => {
+  const token = window.localStorage.getItem("token");
   const history = useHistory();
   const [projectInfo, setProjectInfo] = useState({
     projectTitle: "",
@@ -35,14 +36,6 @@ const StartAProjectForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(projectInfo),
-      // }
-      // title: "New Project",
-      // description: "Lets get creative",
-      // goal: 500,
-      // image:
-      //   "https://images.pexels.com/photos/9429403/pexels-photo-9429403.jpeg?cs=srgb&dl=pexels-monstera-9429403.jpg&fm=jpg",
-      // is_open: true,
-      // date_created: new Date(),
     });
     return response.json();
   };
@@ -50,8 +43,11 @@ const StartAProjectForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // if (window.localStorage.getItem("token")) {
-    postData().then((response) => {}); //passing the whole function as an argument to another function
-  };
+    postData().then((response) => {
+      // history.push("/");
+    });
+    // }
+  }; //passing the whole function as an argument to another function
 
   return (
     <div className="project-box" style={{}}>

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 const ProjectPage = () => {
-  const history = useHistory();
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { isEditing, setIsEditing } = useState(false);
   const { id, project_id } = useParams();
   console.log("my id", id);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}`)
+    fetch(`${process.env.REACT_APP_API_URL}projects/${id}/`)
       .then((results) => {
         return results.json();
       })
@@ -27,22 +26,32 @@ const ProjectPage = () => {
     });
   };
 
+  const history = useHistory();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}`, {
-      method: "put",
-      headers: {
-        Authorisation: `Token ${localStorage.getItem("token")}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: projectData.title,
-        description: projectData.description,
-        amount: projectData.amount,
-        image: projectData.image,
-        is_open: projectData.is_open,
-      }),
-    });
+
+    const response = await fetch(
+      `
+    ${process.env.REACT_APP_API_URL}projects/${id}/`,
+      {
+        method: "put",
+        headers: {
+          Authorization: `Token ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: projectData.id,
+          title: projectData.title,
+          description: projectData.description,
+          goal: projectData.goal,
+          image: projectData.image,
+          is_open: projectData.is_open,
+          date_created: projectData.date_created,
+          owner: projectData.owner,
+        }),
+      }
+    );
   };
 
   const ReadProject = () => {
@@ -50,8 +59,8 @@ const ProjectPage = () => {
       <div className="read">
         <div className="read-project">
           <h2>Title: {projectData.title}</h2>
-          <h2>Description:{projectData.description}</h2>
-          <img src={projectData.image} />
+          <h2>Description: {projectData.description}</h2>
+          <img className="read-image" src={projectData.image} />
           <h2>Goal: {projectData.goal}</h2>
           <h2>
             Created at: {new Date(projectData.date_created).toDateString()}
@@ -73,7 +82,7 @@ const ProjectPage = () => {
   };
 
   const deleteProject = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}projects/${id}/`, {
       method: "delete",
       headers: {
         Authorisation: `Token ${localStorage.getItem("token")}`,
