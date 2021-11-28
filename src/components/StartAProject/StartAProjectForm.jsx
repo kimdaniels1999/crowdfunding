@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./Project.css";
 
 const StartAProjectForm = () => {
-  const token = window.localStorage.getItem("token");
+  // const token = window.localStorage.getItem("token");
   const history = useHistory();
   const [projectInfo, setProjectInfo] = useState({
     projectTitle: "",
@@ -16,12 +16,12 @@ const StartAProjectForm = () => {
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setProjectInfo((prevProject) => {
-      return {
-        ...prevProject,
-        [id]: value,
-      };
-    });
+    setProjectInfo((prevProject) => ({
+      // return {
+      ...prevProject,
+      [id]: value,
+    }));
+    // };
   };
 
   const postData = async () => {
@@ -44,7 +44,7 @@ const StartAProjectForm = () => {
     e.preventDefault();
     // if (window.localStorage.getItem("token")) {
     postData().then((response) => {
-      // history.push("/");
+      history.push("/");
     });
     // }
   }; //passing the whole function as an argument to another function
