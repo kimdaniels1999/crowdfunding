@@ -11,12 +11,12 @@ const SignInForm = () => {
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setCredentials((prevCredentials) => {
-      return {
-        ...prevCredentials,
-        [id]: value,
-      };
-    });
+    setCredentials((prevCredentials) => ({
+      // return {
+      ...prevCredentials,
+      [id]: value,
+      // };
+    }));
   };
 
   const postData = async () => {

@@ -32,8 +32,7 @@ const ProjectPage = () => {
     e.preventDefault();
 
     const response = await fetch(
-      `
-    ${process.env.REACT_APP_API_URL}projects/${id}/`,
+      `${process.env.REACT_APP_API_URL}projects/${id}/`,
       {
         method: "put",
         headers: {
